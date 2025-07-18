@@ -1,9 +1,10 @@
 from pydantic_settings import SettingsConfigDict
 
 from .middleware_config import MiddlewareConfig
+from .log_config import LogConfig
 
 
-class AppConfig(MiddlewareConfig):
+class AppConfig(LogConfig, MiddlewareConfig):
     model_config = SettingsConfigDict(
         # read from dotenv format config file
         env_file=".env",
