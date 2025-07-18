@@ -1,6 +1,7 @@
-from typing import Annotated, Literal, Optional
+from typing import Optional
+
+from pydantic import Field, PositiveInt
 from pydantic_settings import BaseSettings
-from pydantic import Field, NonNegativeInt, PositiveFloat, PositiveInt, computed_field
 
 
 class LogConfig(BaseSettings):
@@ -39,7 +40,7 @@ class LogConfig(BaseSettings):
     )
 
     LOG_TZ: Optional[str] = Field(
-        description="Timezone for log timestamps (e.g., 'America/New_York')",
-        default="UTC",
+        description="Timezone for log timestamps (e.g., 'China/Shanghai')",
+        default="UTC+8",
     )
 
