@@ -1,6 +1,5 @@
 import os
 from urllib.parse import quote_plus
-
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field, NonNegativeInt, PositiveFloat, PositiveInt, computed_field
 

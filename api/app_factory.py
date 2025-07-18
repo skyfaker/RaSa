@@ -1,14 +1,14 @@
 from flask import Flask
 import inspect
-import logging
 import sys
 
 from configs import app_config
 
 
 def initialize_extensions(app):
-    from extensions import ext_db
-    ext_db.init_db(app)
+    from extensions import __all__
+    for init_func in __all__:
+        init_func(app)
 
 
 def create_app():
